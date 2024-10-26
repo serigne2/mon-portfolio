@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prédictions de valeurs réelles avec TensorFlow</title>
+    <link rel="stylesheet" href="../../css/style.css"> <!-- Chemin vers ton fichier CSS -->
+</head>
+<body>
+    <header>
+        <h1>Prédictions de valeurs réelles avec TensorFlow</h1>
+    </header>
+
+    <!-- Section Introduction -->
+    <section>
+        <h2>Introduction</h2>
+        <p>La prédiction de valeurs réelles, ou régression, est une tâche courante en machine learning. TensorFlow permet de créer facilement des modèles de régression pour des applications comme la prédiction des prix, des températures ou des ventes.</p>
+    </section>
+
+    <!-- Étapes pour construire un modèle de régression -->
+    <section>
+        <h2>Étapes pour construire un modèle de régression avec TensorFlow</h2>
+        <ul>
+            <li><strong>1. Préparation des données :</strong> Importer et prétraiter les données pour qu'elles soient prêtes à être utilisées dans le modèle.</li>
+            <li><strong>2. Construction du modèle :</strong> Créer un modèle de régression en utilisant une couche d’entrée et des couches cachées pour capturer les relations.</li>
+            <li><strong>3. Entraînement du modèle :</strong> Compiler et entraîner le modèle sur les données préparées.</li>
+            <li><strong>4. Évaluation :</strong> Évaluer la précision du modèle avec des métriques de régression comme l'erreur quadratique moyenne (MSE).</li>
+            <li><strong>5. Prédiction :</strong> Utiliser le modèle pour faire des prédictions sur de nouvelles données.</li>
+        </ul>
+    </section>
+
+    <!-- Exemple de code : Modèle de régression pour prédire le prix des maisons -->
+    <section>
+        <h2>Exemple de code : Modèle de régression pour prédire le prix des maisons</h2>
+        <p>Voici un exemple simple de modèle de régression pour prédire le prix des maisons en utilisant TensorFlow :</p>
+        <pre><code class="language-python">
+# Importation des bibliothèques
+import tensorflow as tf
+from tensorflow.keras import layers, models
+import numpy as np
+
+# Génération de données fictives pour l'exemple
+X_train = np.random.rand(1000, 1) * 10  # Surface de la maison en m²
+y_train = X_train * 3000 + np.random.normal(0, 20000, (1000, 1))  # Prix en fonction de la surface
+
+# Construction du modèle
+model = models.Sequential([
+    layers.Dense(64, activation='relu', input_shape=(1,)),
+    layers.Dense(32, activation='relu'),
+    layers.Dense(1)  # Couche de sortie pour la prédiction de valeurs continues
+])
+
+# Compilation et entraînement du modèle
+model.compile(optimizer='adam',
+              loss='mean_squared_error',
+              metrics=['mae'])
+model.fit(X_train, y_train, epochs=20)
+
+# Exemple de prédiction
+surface = np.array([[8.5]])  # Surface en m²
+prix_prevu = model.predict(surface)
+print(f"Prix prévu pour une maison de 8.5 m² : {prix_prevu[0][0]}")
+        </code></pre>
+        <p>Ce modèle prend en entrée une surface et prédit le prix. Il est constitué de couches denses pour capturer les relations entre la surface et le prix.</p>
+    </section>
+
+    <!-- Conseils pour améliorer les prédictions -->
+    <section>
+        <h2>Conseils pour améliorer les prédictions</h2>
+        <ul>
+            <li><strong>Normalisez les données :</strong> Une bonne normalisation des données d'entrée peut améliorer la convergence du modèle.</li>
+            <li><strong>Expérimentez avec les hyperparamètres :</strong> Ajustez la taille des couches, le nombre d'epochs, et le taux d'apprentissage pour obtenir de meilleurs résultats.</li>
+            <li><strong>Utilisez des données de validation :</strong> Utilisez un ensemble de validation pour éviter le surapprentissage.</li>
+        </ul>
+    </section>
+
+    <!-- Conclusion -->
+    <section>
+        <h2>Conclusion</h2>
+        <p>La régression est une technique puissante pour les prédictions de valeurs continues. TensorFlow offre des outils simples et flexibles pour créer des modèles de régression adaptés aux besoins spécifiques de chaque projet.</p>
+    </section>
+
+    <!-- Lien retour au blog -->
+    <a href="../../blog.html">Retour au blog</a>
+
+    <!-- Scripts pour le surlignage syntaxique (facultatif) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-python.min.js"></script>
+</body>
+</html>
