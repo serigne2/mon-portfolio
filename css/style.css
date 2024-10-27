@@ -1548,38 +1548,17 @@ pre {
     color: #fff;
     background-color: rgba(255, 255, 255, 0.075); }
  /* début à enlever*/
- /* Media query for smaller screens */
+/* Ajuste la taille du texte du menu sur les petits écrans */
 @media (max-width: 768px) {
-  /* Adjust header text size */
-  h1, h2, h3 {
-    font-size: 1.5rem; /* Adapt font sizes */
-    text-align: center; /* Center-align text for a cleaner look */
+  .navbar-brand {
+    font-size: 1.5rem;
   }
-
-  /* Adjust padding for sections */
-  .section-padding {
-    padding: 30px 15px; /* Reduce padding for smaller screens */
-  }
-
-  /* Adjust button sizes */
-  .btn {
-    font-size: 1rem;
-    padding: 10px 20px;
-  }
-
-  /* Center-align the header and intro */
-  .intro-text {
-    text-align: center;
-    font-size: 1.25rem;
+  .navbar-nav .nav-link {
+    font-size: 1.2rem;
+    padding: 10px;
   }
 }
-/* Padding adjustments for mobile */
-@media (max-width: 576px) {
-  .container, .container-fluid {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
+
 
  /* fin à enlever*/
 @media (max-width: 575.98px) {
@@ -3527,16 +3506,9 @@ input[type="button"].btn-block {
 
 .navbar-collapse {
   /* début à enlever*/
-  background-color: #333; /* Background for mobile menu */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  padding-top: 60px;
-  transition: transform 0.3s ease;
-  transform: translateX(-100%);
-  z-index: 1000;
+  max-height: 30vh; /* Limite la hauteur à 80% de l'écran */
+  overflow-y: auto; /* Ajoute un défilement vertical si le contenu dépasse */
+  background-color: #333; /* Conserve la couleur de fond */
   /* fin à elenver*/
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
