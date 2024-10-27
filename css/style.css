@@ -165,6 +165,10 @@ figure {
   margin: 0 0 1rem; }
 
 img {
+  /*début à enlever*/
+  max-width: 100%;
+  height: auto; /* Keeps aspect ratio */
+  /* fin */
   vertical-align: middle;
   border-style: none; }
 
@@ -1543,7 +1547,41 @@ pre {
   .table-dark.table-hover tbody tr:hover {
     color: #fff;
     background-color: rgba(255, 255, 255, 0.075); }
+ /* début à enlever*/
+ /* Media query for smaller screens */
+@media (max-width: 768px) {
+  /* Adjust header text size */
+  h1, h2, h3 {
+    font-size: 1.5rem; /* Adapt font sizes */
+    text-align: center; /* Center-align text for a cleaner look */
+  }
 
+  /* Adjust padding for sections */
+  .section-padding {
+    padding: 30px 15px; /* Reduce padding for smaller screens */
+  }
+
+  /* Adjust button sizes */
+  .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  /* Center-align the header and intro */
+  .intro-text {
+    text-align: center;
+    font-size: 1.25rem;
+  }
+}
+/* Padding adjustments for mobile */
+@media (max-width: 576px) {
+  .container, .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+ /* fin à enlever*/
 @media (max-width: 575.98px) {
   .table-responsive-sm {
     display: block;
@@ -3488,6 +3526,18 @@ input[type="button"].btn-block {
   padding-bottom: 0.5rem; }
 
 .navbar-collapse {
+  /* début à enlever*/
+  background-color: #333; /* Background for mobile menu */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding-top: 60px;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+  z-index: 1000;
+  /* fin à elenver*/
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
   -webkit-box-flex: 1;
@@ -3496,13 +3546,25 @@ input[type="button"].btn-block {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
+ 
+  /* à enlever*/
+  .navbar-collapse.show {
+    transform: translateX(0);
+  }
 
 .navbar-toggler {
-  padding: 0.25rem 0.75rem;
-  font-size: 1.25rem;
+  /*début à enlever*/
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  color: #ffffff; /* Ensure the icon is visible */
+  border: none; /* Remove border */
+  outline: none; /* Remove outline */
+  /* fin à enlever*/
+  /*padding: 0.25rem 0.75rem; à remettre*/
+  /*font-size: 1.25rem; à remettre*/
   line-height: 1;
   background-color: transparent;
-  border: 1px solid transparent;
+  /*border: 1px solid transparent;à remettre*/
   border-radius: 0.25rem; }
   .navbar-toggler:hover, .navbar-toggler:focus {
     text-decoration: none; }
@@ -3539,6 +3601,12 @@ input[type="button"].btn-block {
       .navbar-expand-sm .navbar-nav .dropdown-menu {
         position: absolute; }
       .navbar-expand-sm .navbar-nav .nav-link {
+        /* début à enelever*/
+        font-size: 1.25rem;
+        color: #ffffff;
+        padding: 15px;
+        text-align: center;
+        /* fin */
         padding-right: 0.5rem;
         padding-left: 0.5rem; }
     .navbar-expand-sm > .container,
