@@ -275,3 +275,20 @@
 
 })(jQuery);
 
+/*début à enlever*/
+document.addEventListener("DOMContentLoaded", function() {
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navbarToggler.addEventListener('click', function() {
+        navbarCollapse.classList.toggle('show');
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navbarCollapse.classList.remove('show');
+        });
+    });
+});
+/* fin à enlever*/

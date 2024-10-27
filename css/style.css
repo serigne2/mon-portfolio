@@ -3493,6 +3493,11 @@ input[type="button"].btn-block {
   margin-bottom: 0;
   list-style: none; }
   .navbar-nav .nav-link {
+    /* à début */
+    font-size: 1rem; /* Diminue la taille de la police pour les liens */
+    padding: 8px 0; /* Réduit l'espacement vertical */
+    text-align: center;
+    /* fin à enlever */
     padding-right: 0;
     padding-left: 0; }
   .navbar-nav .dropdown-menu {
