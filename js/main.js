@@ -281,14 +281,24 @@ document.addEventListener("DOMContentLoaded", function() {
     const navbarCollapse = document.querySelector('.navbar-collapse');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    navbarToggler.addEventListener('click', function() {
+    navbarToggler.addEventListener('click', function(event) {
+        event.stopPropagation(); // Empêche la propagation du clic
         navbarCollapse.classList.toggle('show');
     });
 
     navLinks.forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (event) => {
+            event.stopPropagation(); // Empêche la fermeture immédiate
             navbarCollapse.classList.remove('show');
         });
     });
+
+    // Ferme le menu si l'utilisateur clique en dehors
+    document.addEventListener('click', function(event) {
+        if (!navbarCollapse.contains(event.target) && navbarCollapse.classList.contains('show')) {
+            navbarCollapse.classList.remove('show');
+        }
+    });
 });
+
 /* fin à enlever*/
