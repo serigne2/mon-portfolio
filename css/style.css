@@ -3511,9 +3511,14 @@ input[type="button"].btn-block {
 
 .navbar-collapse {
   /* début à enlever*/
-  max-height: 30vh; /* Limite la hauteur à 80% de l'écran */
-  overflow-y: auto; /* Ajoute un défilement vertical si le contenu dépasse */
-  background-color: #333; /* Conserve la couleur de fond */
+  max-height: 60vh; /* Limite la hauteur du menu à 60% de la hauteur de l'écran */
+  overflow-y: auto; /* Permet un défilement vertical à l'intérieur du menu */
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   /* fin à elenver*/
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
@@ -3579,10 +3584,10 @@ input[type="button"].btn-block {
         position: absolute; }
       .navbar-expand-sm .navbar-nav .nav-link {
         /* début à enelever*/
-        font-size: 1.25rem;
-        color: #ffffff;
-        padding: 15px;
-        text-align: center;
+        /*font-size: 1.25rem;*/
+        /*color: #ffffff;*/
+        /*padding: 15px;*/
+        /*text-align: center;*/
         /* fin */
         padding-right: 0.5rem;
         padding-left: 0.5rem; }
