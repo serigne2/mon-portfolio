@@ -451,6 +451,13 @@ pre {
   overflow-y: scroll; }
 
 .container {
+  /* à enlever */
+
+  /*display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;*/
+  
+  /* fin à enlever */
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -3818,6 +3825,14 @@ input[type="button"].btn-block {
       color: #fff; }
 
 .card {
+  /* début à enlever*/
+
+  /*justify-content: space-between;
+  flex: 1 1 45%; 
+  height: 250px; 
+  min-height: 200px; */ 
+
+  /* fin à enlever*/
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;

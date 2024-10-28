@@ -106,7 +106,7 @@
 		            <p>Ingénieur de données freelance, je suis passionné par la transformation des données en solutions stratégiques pour les entreprises, tout en recherchant constamment de nouveaux défis.</p>
 		            <ul class="about-info mt-4 px-md-0 px-2">
 		            	<li class="d-flex"><span>Nom:</span> <span>Serigne Faye</span></li>
-		            	<li class="d-flex"><span>Date of birth:</span> <span>January 01, 1987</span></li>
+		            	<!--<li class="d-flex"><span>Date of birth:</span> <span>January 01, 1987</span></li>-->
 		            	<li class="d-flex"><span>Addresse:</span> <span>Marseille</span></li>
 		            	<li class="d-flex"><span>Code Postale:</span> <span>13008</span></li>
 		            	<li class="d-flex"><span>Email:</span> <span>serigne.faye905@gmail.com</span></li>
@@ -120,7 +120,7 @@
 	                <span class="number" data-number="50">0</span>
 	                <span>Projets complets</span>
                 </p>
-                <p><a href="#" class="btn btn-primary py-3 px-3">Download CV</a></p>
+                <!--<p><a href="#" class="btn btn-primary py-3 px-3">Download CV</a></p>-->
               </div>
 	          </div>
 	        </div>
@@ -175,11 +175,11 @@
     			</div>
 				
     		</div>
-    		<div class="row justify-content-center mt-5">
+    		<!--<div class="row justify-content-center mt-5">
     			<div class="col-md-6 text-center ftco-animate">
     				<p><a href="#" class="btn btn-primary py-4 px-5">Download CV</a></p>
     			</div>
-    		</div>
+    		</div>-->
     	</div>
     </section>
 
@@ -452,7 +452,7 @@
 							<div class="d-flex align-items-center mb-3 meta">
 								<p class="mb-0"><span class="mr-2">Articles techniques</span></p>
 							</div>
-							<h3 class="heading"><a href="blog/articles/article-machine-learning.html">Découvrez nos articles techniques</a></h3>
+							<h3 class="heading"><a href="blog/articles.html">Découvrez nos articles techniques</a></h3>
 							<p>Plongez dans des sujets comme l'ingénierie des données, le machine learning, et les plateformes cloud.</p>
 						</div>
 					</div>
@@ -461,7 +461,7 @@
 				<!-- Études de cas -->
 				<div class="col-md-4 d-flex ftco-animate">
 					<div class="blog-entry justify-content-end">
-						<a href="blog/cas/cas-etude-retail.html" class="block-20" style="background-image: url('images/etude-cas.png');">
+						<a href="blog/cas.html" class="block-20" style="background-image: url('images/etude-cas.png');">
 						</a>
 						<div class="text mt-3 float-right d-block">
 							<div class="d-flex align-items-center mb-3 meta">
@@ -476,7 +476,7 @@
 				<!-- Partage de ressources et outils -->
 				<div class="col-md-4 d-flex ftco-animate">
 					<div class="blog-entry justify-content-end">
-						<a href="blog/ressources/outils-ingenierie.html" class="block-20" style="background-image: url('images/ressources-tools.webp');">
+						<a href="blog/ressources/ressources-outils.html" class="block-20" style="background-image: url('images/ressources-tools.webp');">
 						</a>
 						<div class="text mt-3 float-right d-block">
 							<div class="d-flex align-items-center mb-3 meta">
@@ -492,7 +492,7 @@
 				<!-- Témoignages de clients -->
 				<div class="col-md-4 d-flex ftco-animate">
 					<div class="blog-entry justify-content-end">
-						<a href="blog/temoignages/temoignage-client1.html" class="block-20" style="background-image: url('images/client.jpeg');">
+						<a href="blog/temoignages/temoignages.html" class="block-20" style="background-image: url('images/client.jpeg');">
 						</a>
 						<div class="text mt-3 float-right d-block">
 							<div class="d-flex align-items-center mb-3 meta">
@@ -673,7 +673,8 @@
         </div>
 
         <div class="row no-gutters block-9">
-          <div class="col-md-6 order-md-last d-flex">
+	      	
+          <!--<div class="col-md-6 order-md-last d-flex">
             <form action="#" class="bg-light p-4 p-md-5 contact-form">
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="Your Name">
@@ -692,7 +693,27 @@
               </div>
             </form>
           
-          </div>
+          </div> formulaire avant-->
+		  <div class="col-md-6 order-md-last d-flex">
+			<form action="/submit" method="POST" class="bg-light p-4 p-md-5 contact-form">
+				<div class="form-group">
+					<input type="text" class="form-control" name="name" placeholder="Your Name" required>
+				</div>
+				<div class="form-group">
+					<input type="email" class="form-control" name="email" placeholder="Your Email" required>
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" name="subject" placeholder="Subject" required>
+				</div>
+				<div class="form-group">
+					<textarea name="message" cols="30" rows="7" class="form-control" placeholder="Message" required></textarea>
+				</div>
+				<div class="form-group">
+					<input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+				</div>
+			</form>
+		</div>
+		
 
           <div class="col-md-6 d-flex">
           	<div class="img" style="background-image: url(images/photo2-mod.jpg);"></div>
@@ -707,12 +728,14 @@
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">À propose</h2>
+              <h2 class="ftco-heading-2">À propos</h2>
               <p>La puissance des données au service de vos ambitions.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                <!--<li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>-->
+                <!--<li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>-->
+				<li class="ftco-animate"><a href="https://www.linkedin.com/in/serigne-faye12/" target="_blank"><span class="icon-linkedin"></span></a></li>
+				<li class="ftco-animate"><a href="https://github.com/serigne2" target="_blank"><span class="icon-github"></span></a></li>
               </ul>
             </div>
           </div>
@@ -757,7 +780,7 @@
           <div class="col-md-12 text-center">
 
             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> 2024 Tous droits réservés | Site créé par serigne avec l'aide <i class="icon-heart color-danger" aria-hidden="true"></i> de <a href="https://themes.getbootstrap.com/" target="_blank">bootstrap</a>
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
           </div>
         </div>
