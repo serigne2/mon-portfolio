@@ -9,8 +9,8 @@ app = Flask(__name__)
 app.config['MAIL_SERVER'] = 'smtp.yourmailprovider.com'  # Remplace avec ton serveur SMTP
 app.config['MAIL_PORT'] = 587  # Port SMTP
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'layezo1230@example.com'  # Ton email
-app.config['MAIL_PASSWORD'] = 'Yayeboye2019@'  # Ton mot de passe d'email
+app.config['MAIL_USERNAME'] = ''  # Ton email
+app.config['MAIL_PASSWORD'] = ''  # Ton mot de passe d'email
 
 mail = Mail(app)
 
