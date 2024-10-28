@@ -1568,7 +1568,7 @@ pre {
 /* Ajustement supplémentaire pour les écrans mobiles */
 @media (max-width: 768px) {
   .profile-photo-container {
-    max-height: 300px; /* Réduit davantage la hauteur de l'image sur les petits écrans */
+    max-height: 300px !important; /* Réduit davantage la hauteur de l'image sur les petits écrans */
   }
 }
 
@@ -4392,11 +4392,11 @@ input[type="button"].btn-block {
 
     /* début à enlever*/
     .profile-photo-container {
-      background-size: contain; /* Ajuste l'image pour qu'elle s'adapte au conteneur */
-      background-position: center; /* Centre l'image */
-      background-repeat: no-repeat; /* Empêche la répétition de l'image */
+      background-size: contain !important; /* Ajuste l'image pour qu'elle s'adapte au conteneur */
+      background-position: center !important; /* Centre l'image */
+      background-repeat: no-repeat !important; /* Empêche la répétition de l'image */
       height: auto;
-      max-height: 500px; /* Limite la hauteur de l'image */
+      max-height: 500px !important; /* Limite la hauteur de l'image */
     }
     /*fin à enlever*/
 .progress {
