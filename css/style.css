@@ -4396,7 +4396,7 @@ input[type="button"].btn-block {
       height: 150px !important; /* Diminue la hauteur de la photo */
       background-size: cover;
       position: absolute;
-      top: -500px !important; /* Ajuste cette valeur pour monter ou descendre */
+      top: -550px !important; /* Ajuste cette valeur pour monter ou descendre */
       right: 5px !important; /* Ajuste cette valeur pour décaler à gauche ou droite */
       border-radius: 50%; /* Rend la photo circulaire */
       /* */
