@@ -3527,7 +3527,7 @@ input[type="button"].btn-block {
   max-height: 30vh; /* Limite la hauteur du menu à 60% de la hauteur de l'écran */
   overflow-y: auto; /* Permet un défilement vertical à l'intérieur du menu */
   background-color: #333;
-  position: fixed;
+  position: relative; /* fixed à remettre*/
   top: 0;
   left: 0;
   width: 100%;
