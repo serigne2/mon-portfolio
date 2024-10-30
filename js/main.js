@@ -301,6 +301,18 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const menuButton = document.querySelector('.navbar-toggler'); // Bouton du menu
+    const menuContent = document.querySelector('.navbar-collapse'); // Contenu du menu
+
+    // Toggle le menu et le défilement
+    menuButton.addEventListener('click', function () {
+        menuContent.classList.toggle('show'); // Affiche/masque le menu
+        document.body.classList.toggle('overflow-hidden'); // Bloque/débloque le défilement
+    });
+
+
+});
 
 
 
