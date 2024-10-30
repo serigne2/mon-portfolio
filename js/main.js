@@ -301,12 +301,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-const navbarToggler = document.querySelector('.navbar-toggler');
-const navbarCollapse = document.querySelector('.navbar-collapse');
 
-navbarToggler.addEventListener('click', function() {
-    document.body.classList.toggle('overflow-hidden'); // Ajoute/supprime overflow-hidden sur le body
-});
 
 
 /* fin à enlever*/
