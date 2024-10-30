@@ -4391,6 +4391,14 @@ input[type="button"].btn-block {
     background-position: 0 0; } }
 
     /* début à enlever*/
+    .img-about .img {
+      width: 150px !important; /* Ajuste la largeur de l'image */
+      height: 150px !important; /* Ajuste la hauteur de l'image */
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%; /* Garde l'image circulaire si besoin */
+  }
+  
     .profile-photo-container {
       width: 150px !important; /* Diminue la largeur de la photo */
       height: 150px !important; /* Diminue la hauteur de la photo */
@@ -4398,8 +4406,9 @@ input[type="button"].btn-block {
       position: absolute;
       top: -550px !important; /* Ajuste cette valeur pour monter ou descendre */
       right: 5px !important; /* Ajuste cette valeur pour décaler à gauche ou droite */
+      left: -100px;
       border-radius: 50%; /* Rend la photo circulaire */
-      /* */
+       
       /*background-size: contain !important; à remettre/* Ajuste l'image pour qu'elle s'adapte au conteneur */
       background-position: center !important; /* Centre l'image */
       background-repeat: no-repeat !important; /* Empêche la répétition de l'image */
