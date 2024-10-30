@@ -302,17 +302,26 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const menuButton = document.querySelector('.navbar-toggler'); // Bouton du menu
-    const menuContent = document.querySelector('.navbar-collapse'); // Contenu du menu
+    const menuButton = document.querySelector('.navbar-toggler');
+    const menuContent = document.querySelector('.navbar-collapse');
 
-    // Toggle le menu et le défilement
     menuButton.addEventListener('click', function () {
-        menuContent.classList.toggle('show'); // Affiche/masque le menu
-        document.body.classList.toggle('overflow-hidden'); // Bloque/débloque le défilement
+        if (!menuContent.classList.contains('show')) {
+            document.body.classList.add('overflow-hidden');
+        } else {
+            document.body.classList.remove('overflow-hidden');
+        }
     });
 
-
+    // Assure que le défilement est débloqué si un lien du menu est cliqué
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function () {
+            menuContent.classList.remove('show');
+            document.body.classList.remove('overflow-hidden');
+        });
+    });
 });
+
 
 
 
