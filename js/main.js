@@ -301,26 +301,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const menuButton = document.querySelector('.navbar-toggler');
-    const menuContent = document.querySelector('.navbar-collapse');
-
-    menuButton.addEventListener('click', function () {
-        if (!menuContent.classList.contains('show')) {
-            document.body.classList.add('overflow-hidden');
-        } else {
-            document.body.classList.remove('overflow-hidden');
-        }
-    });
-
-    // Assure que le défilement est débloqué si un lien du menu est cliqué
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', function () {
-            menuContent.classList.remove('show');
-            document.body.classList.remove('overflow-hidden');
-        });
-    });
-});
 
 
 
