@@ -4391,6 +4391,14 @@ input[type="button"].btn-block {
     background-position: 0 0; } }
 
     /* début à enlever*/
+    .col-md-6 .img {
+      width: 200px !important; /* Réduit la largeur de l'image */
+      height: 200px !important; /* Réduit la hauteur de l'image */
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%; /* Garde l'image circulaire si nécessaire */
+  }
+  
     .img-about .img {
       width: 150px !important; /* Ajuste la largeur de l'image */
       height: 150px !important; /* Ajuste la hauteur de l'image */
