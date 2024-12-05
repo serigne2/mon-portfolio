@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNION vs UNION ALL : Cas surprenants en SQL</title>
+    <link rel="stylesheet" href="../../css/style.css"> <!-- Lien vers le fichier CSS -->
+</head>
+<body>
+    <header>
+        <h1>UNION vs UNION ALL : Cas surprenants en SQL</h1>
+    </header>
+
+    <!-- Section Introduction -->
+    <section>
+        <h2>Introduction</h2>
+        <p>Si vous avez déjà écrit des requêtes SQL complexes, vous avez probablement utilisé les commandes <strong>UNION</strong> et <strong>UNION ALL</strong>. Ces deux opérations permettent de combiner les résultats de plusieurs requêtes, mais leur fonctionnement interne peut parfois produire des résultats surprenants en termes de performance.</p>
+        <p>Dans cet article, nous allons explorer un cas pratique où <strong>UNION</strong> s'avère plus rapide que <strong>UNION ALL</strong>, une situation contre-intuitive mais riche en enseignements.</p>
+    </section>
+
+    <!-- Différence entre UNION et UNION ALL -->
+    <section>
+        <h2>Différence entre UNION et UNION ALL</h2>
+        <p>Avant d'examiner le cas pratique, rappelons les bases :</p>
+        <ul>
+            <li><strong>UNION :</strong> Combine deux ensembles de données <em>en supprimant les doublons</em>. Cela implique un tri implicite des résultats pour détecter et éliminer les doublons.</li>
+            <li><strong>UNION ALL :</strong> Combine deux ensembles de données <em>sans supprimer les doublons</em>. Les résultats sont simplement concaténés.</li>
+        </ul>
+        <p>On suppose généralement que <strong>UNION ALL</strong> est plus rapide que <strong>UNION</strong>, car il n'y a pas d'étape de suppression des doublons. Mais ce n'est pas toujours vrai !</p>
+    </section>
+
+    <!-- Cas pratique -->
+    <section>
+        <h2>Cas pratique : Clients et Commandes</h2>
+        <p>Imaginons deux tables SQL :</p>
+        <ul>
+            <li><strong>Clients :</strong> Contient des milliers de clients.</li>
+            <li><strong>Commandes :</strong> Contient des millions de commandes.</li>
+        </ul>
+        <p>Notre objectif est de combiner ces deux ensembles pour obtenir une vue unique de toutes les données. Nous testons les deux approches :</p>
+        <ol>
+            <li><strong>Avec UNION ALL :</strong> Tous les enregistrements sont combinés sans suppression des doublons.</li>
+            <li><strong>Avec UNION :</strong> Les doublons sont supprimés.</li>
+        </ol>
+    </section>
+
+    <!-- Résultat et explications -->
+    <section>
+        <h2>Résultat : UNION plus rapide que UNION ALL ?!</h2>
+        <p>Voici les résultats du test :</p>
+        <ul>
+            <li><strong>UNION ALL :</strong> La requête tourne indéfiniment et ne termine pas.</li>
+            <li><strong>UNION :</strong> La requête s'exécute en quelques secondes.</li>
+        </ul>
+        <h3>Pourquoi ce résultat surprenant ?</h3>
+        <p>Plusieurs facteurs techniques expliquent cette observation :</p>
+        <ul>
+            <li><strong>Déséquilibre des tailles :</strong> La table Commandes (millions de lignes) écrase la petite table Clients (quelques milliers de lignes), ce qui surcharge l’opération de concaténation brute de UNION ALL.</li>
+            <li><strong>Indexation :</strong> UNION peut tirer parti des index existants pour supprimer rapidement les doublons, rendant l'opération étonnamment rapide.</li>
+            <li><strong>Gestion des tables temporaires :</strong> Lorsque la mémoire est saturée, UNION ALL doit souvent écrire une table temporaire pour contenir toutes les données. Cela ralentit considérablement le traitement.</li>
+            <li><strong>Tri implicite :</strong> Paradoxalement, le tri implicite de UNION est parfois optimisé grâce à l’utilisation d’algorithmes efficaces et d’index.</li>
+        </ul>
+    </section>
+
+    <!-- Leçons apprises -->
+    <section>
+        <h2>Leçons à retenir</h2>
+        <ul>
+            <li><strong>Analysez vos données :</strong> La distribution et la taille des tables jouent un rôle majeur dans les performances des jointures.</li>
+            <li><strong>Exploitez les index :</strong> Les index peuvent rendre certaines opérations (comme la suppression des doublons) plus rapides que prévu.</li>
+            <li><strong>Surveillez les tables temporaires :</strong> Les requêtes qui génèrent de grandes tables temporaires peuvent être beaucoup plus lentes.</li>
+        </ul>
+        <p>En comprenant ces mécanismes, vous pouvez optimiser vos requêtes SQL et éviter des surprises coûteuses en production.</p>
+    </section>
+
+    <!-- Conclusion -->
+    <section>
+        <h2>Conclusion</h2>
+        <p>Ce cas pratique montre qu’il est crucial de comprendre les mécanismes internes des bases de données pour écrire des requêtes performantes. Parfois, des hypothèses évidentes (comme "UNION ALL est toujours plus rapide que UNION") peuvent être invalidées par la réalité des données et de leur traitement.</p>
+        <p>Et vous, avez-vous rencontré des cas similaires ? Partagez vos expériences dans les commentaires !</p>
+    </section>
+
+    <!-- Lien retour au blog -->
+    <a href="../articles.html">Retour aux articles</a>
+
+    <!-- Scripts pour le surlignage syntaxique (facultatif) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-python.min.js"></script>
+</body>
+</html>
